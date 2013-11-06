@@ -1,0 +1,53 @@
+[user]
+	name = Gabriel Russell
+	email = gabriel@wiccatech.com
+[push]
+	default = current
+[merge]
+        verbosity = 3
+[diff]
+	renamelimit = 0
+[color]
+	ui = auto
+[format]
+        pretty = %Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>
+[alias]
+	a     = add -v
+	au    = add -v -u
+	ba    = branch -a
+	bac   = branch -a --contains
+	bam   = branch -a --merged
+	bag   = !git branch -a | grep
+	b     = branch -v
+        cam   = commit -v -a -m
+	c     = commit -v
+	cm    = commit -v -m
+        cp    = cherry-pick 
+        cifa  = checkout-index -f -a
+        cxdf  = clean -xdf
+        dc    = diff --cached
+        d     = diff
+        dh    = diff HEAD
+	fa    = !git fetch -a --multiple `git remote`
+	f     = fetch -v
+        find  = !find . -path ./.git -prune -o -print
+        l     = log                   --graph --date-order
+	la    = log --all             --graph --date-order
+	lan   = log --all --name-only --graph --date-order
+	lap   = log --all -p          --graph --date-order
+	ln    = log       --name-only --graph --date-order  --format=medium
+	lf    = log       --follow
+        lp    = log       -p                                --format=medium
+	m     = merge -v
+	o     = checkout
+        of    = checkout -f
+	ob    = checkout -b
+	om    = checkout -m
+	ot    = checkout -t
+        p     = pull -v
+	rpa   = !git remote -v prune `git remote`
+        rph   = rev-parse --short=12 HEAD
+	r     = remote -v
+        srh   = symbolic-ref HEAD
+	s     = show --pretty=full
+	t     = status
