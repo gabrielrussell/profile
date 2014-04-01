@@ -38,6 +38,7 @@
 	ln    = log       --name-only --graph --date-order  --format=medium
 	lf    = log       --follow
         lp    = log       -p                                --format=medium
+        lr    = log --reverse --pretty=format:'pick %h %s'
 	m     = merge -v
 	o     = checkout
         of    = checkout -f
