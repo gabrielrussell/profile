@@ -1,6 +1,6 @@
 [user]
 	name = Gabriel Russell
-	email = gabriel@wiccatech.com
+	email = gabriel.russell@mongodb.com
 [push]
 	default = current
 [merge]
@@ -9,8 +9,8 @@
 	renamelimit = 0
 [color]
 	ui = auto
-[format]
-        pretty = %Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>
+[pretty]
+        olcolor='%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>'
 [alias]
 	a     = add -v
 	au    = add -v -u
@@ -31,14 +31,14 @@
 	fa    = !git fetch -a --multiple `git remote`
 	f     = fetch -v
         find  = !find . -path ./.git -prune -o -print
-        l     = log                   --graph --date-order
-	la    = log --all             --graph --date-order
-	lan   = log --all --name-only --graph --date-order
-	lap   = log --all -p          --graph --date-order
-	ln    = log       --name-only --graph --date-order  --format=medium
-	lf    = log       --follow
-        lp    = log       -p                                --format=medium
-        lr    = log --reverse --pretty=format:'pick %h %s'
+        l     = log                   --graph --date-order  --pretty=olcolor
+	la    = log --all             --graph --date-order       --pretty=olcolor
+	lan   = log --all --name-only --graph --date-order       --pretty=olcolor
+        lap   = log --all -p          --graph --date-order       --pretty=olcolor
+	ln    = log       --name-only --graph --date-order       --format=medium
+	lf    = log       --follow                               --pretty=olcolor
+        lp    = log       -p                                     --format=medium
+        lr    = log --reverse                                    --pretty=format:'pick %h %s'
 	m     = merge -v
 	o     = checkout
         of    = checkout -f
@@ -52,3 +52,4 @@
         srh   = symbolic-ref HEAD
 	s     = show --pretty=full
 	t     = status
+        srb   = !git stash && git pull --rebase && git stash pop

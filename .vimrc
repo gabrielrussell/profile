@@ -23,20 +23,20 @@ set tabstop=8
 set ttymouse=xterm2
 set wildmode=list:longest
 set formatoptions=tcro
-
 set statusline=%f[%{strlen(&fenc)?&fenc:'none'},%{&ff}]%h%m%r%y%=%c,%l/%L\ %P
 set laststatus=2
-
 set tags+=/usr/include/tags,./tags;/
-
-set rtp+=$GOROOT/misc/vim
-
 set rtp+=~/.vim/bundle/vundle/
+
 call vundle#rc()
 
-Bundle 'gmarik/vundle'
-Bundle 'airblade/vim-gitgutter.git'
-Bundle 'mhinz/vim-startify'
+filetype off
+filetype plugin indent off
+
+Plugin 'gmarik/vundle'
+Plugin 'airblade/vim-gitgutter.git'
+Plugin 'mhinz/vim-startify'
+Plugin 'jnwhiteh/vim-golang'
 
 if has('xterm_clipboard')
     set clipboard=unnamed,autoselect
@@ -52,14 +52,15 @@ autocmd BufWinLeave * if expand("%") != "" | mkview | endif
 filetype plugin indent on
 syntax on
 
-let &titlestring = hostname() . " vim " . expand("%:t")
-if &term == "screen"
-  set t_ts=k
-  set t_fs=\
-endif
-if &term == "screen" || &term == "xterm"
-  set title
-endif
+autocmd FileType go autocmd BufWritePre <buffer> Fmt
+autocmd FileType go set tabstop=2
+
+set title
+autocmd BufEnter * let &titlestring = hostname() . "[vim(" . expand("%:t") . ")]"
+
+let g:agprg="/usr/local/bin/ag --column"
+
+map <Leader>] :Ag <cword><Return>
 
 map <Leader>h :bp<Return>
 map <Leader>l :bn<Return>
@@ -89,3 +90,4 @@ map th3 :call HL("3")<CR>
 map tH1 :call HLE("1")<CR>
 map tH2 :call HLE("2")<CR>
 map tH3 :call HLE("3")<CR>
+Bundle 'rking/ag.vim'
