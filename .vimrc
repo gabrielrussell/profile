@@ -37,7 +37,7 @@ filetype plugin indent off
 Plugin 'gmarik/vundle'
 Plugin 'airblade/vim-gitgutter.git'
 Plugin 'mhinz/vim-startify'
-Plugin 'jnwhiteh/vim-golang'
+Plugin 'fatih/vim-go'
 
 call vundle#end()
 
