@@ -26,9 +26,10 @@ set formatoptions=tcro
 set statusline=%f[%{strlen(&fenc)?&fenc:'none'},%{&ff}]%h%m%r%y%=%c,%l/%L\ %P
 set laststatus=2
 set tags+=/usr/include/tags,./tags;/
-set rtp+=~/.vim/bundle/vundle/
 
-call vundle#rc()
+set rtp+=~/.vim/bundle/Vundle.vim/
+
+call vundle#begin()
 
 filetype off
 filetype plugin indent off
@@ -37,6 +38,8 @@ Plugin 'gmarik/vundle'
 Plugin 'airblade/vim-gitgutter.git'
 Plugin 'mhinz/vim-startify'
 Plugin 'jnwhiteh/vim-golang'
+
+call vundle#end()
 
 if has('xterm_clipboard')
     set clipboard=unnamed,autoselect
