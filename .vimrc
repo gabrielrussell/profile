@@ -38,6 +38,8 @@ Plugin 'gmarik/vundle'
 Plugin 'airblade/vim-gitgutter.git'
 Plugin 'mhinz/vim-startify'
 Plugin 'fatih/vim-go'
+Plugin 'tpope/vim-fugitive'
+Plugin 'rking/ag.vim'
 
 call vundle#end()
 
@@ -55,13 +57,11 @@ autocmd BufWinLeave * if expand("%") != "" | mkview | endif
 filetype plugin indent on
 syntax on
 
-autocmd FileType go autocmd BufWritePre <buffer> Fmt
+autocmd FileType go autocmd BufWritePre <buffer> GoFmt
 autocmd FileType go set tabstop=2
 
 set title
 autocmd BufEnter * let &titlestring = hostname() . "[vim(" . expand("%:t") . ")]"
-
-let g:agprg="/usr/local/bin/ag --column"
 
 map <Leader>] :Ag <cword><Return>
 
@@ -93,4 +93,3 @@ map th3 :call HL("3")<CR>
 map tH1 :call HLE("1")<CR>
 map tH2 :call HLE("2")<CR>
 map tH3 :call HLE("3")<CR>
-Bundle 'rking/ag.vim'
