@@ -36,10 +36,13 @@ filetype plugin indent off
 
 Plugin 'gmarik/vundle'
 Plugin 'airblade/vim-gitgutter.git'
+":GitGutterEnable, etc
 Plugin 'mhinz/vim-startify'
 Plugin 'fatih/vim-go'
 Plugin 'tpope/vim-fugitive'
+":Gstatus, etc
 Plugin 'rking/ag.vim'
+Plugin 'tpope/vim-unimpaired'
 
 call vundle#end()
 

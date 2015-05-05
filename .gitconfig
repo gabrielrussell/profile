@@ -1,6 +1,8 @@
 [user]
 	name = Gabriel Russell
 	email = gabriel.russell@mongodb.com
+[core]
+        editor = vim
 [push]
 	default = current
 [merge]
