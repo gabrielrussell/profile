@@ -29,10 +29,9 @@ set tags+=/usr/include/tags,./tags;/
 
 set rtp+=~/.vim/bundle/Vundle.vim/
 
-call vundle#begin()
-
 filetype off
-filetype plugin indent off
+
+call vundle#begin()
 
 Plugin 'gmarik/vundle'
 Plugin 'airblade/vim-gitgutter.git'
@@ -46,13 +45,15 @@ Plugin 'tpope/vim-unimpaired'
 
 call vundle#end()
 
+filetype plugin indent off
+
 if has('xterm_clipboard')
     set clipboard=unnamed,autoselect
 endif
 
 let g:go_fmt_command="gofmt"
 
-colorscheme slate
+colorscheme molokai
 
 let mapleader = ','
 
