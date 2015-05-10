@@ -50,6 +50,8 @@ if has('xterm_clipboard')
     set clipboard=unnamed,autoselect
 endif
 
+let g:go_fmt_command="gofmt"
+
 colorscheme slate
 
 let mapleader = ','
@@ -59,9 +61,6 @@ autocmd BufWinLeave * if expand("%") != "" | mkview | endif
 
 filetype plugin indent on
 syntax on
-
-autocmd FileType go autocmd BufWritePre <buffer> GoFmt
-autocmd FileType go set tabstop=2
 
 set title
 autocmd BufEnter * let &titlestring = hostname() . "[vim(" . expand("%:t") . ")]"
