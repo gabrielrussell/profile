@@ -18,7 +18,7 @@
 [alias]
 	a     = add -v
 	au    = add -v -u
-	ba    = branch -a
+	ba    = branch -a -v
 	bac   = branch -a --contains
 	bam   = branch -a --merged
 	bag   = !git branch -a | grep

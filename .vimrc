@@ -11,7 +11,8 @@ set hidden
 set hls
 set incsearch
 set linebreak
-set mouse=a
+"set mouse=a
+"set ttymouse=xterm2
 set number
 set ruler
 set scrolloff=2
@@ -20,12 +21,12 @@ set showmatch
 set smartindent
 set softtabstop=4
 set tabstop=8
-set ttymouse=xterm2
 set wildmode=list:longest
 set formatoptions=tcro
 set statusline=%f[%{strlen(&fenc)?&fenc:'none'},%{&ff}]%h%m%r%y%=%c,%l/%L\ %P
 set laststatus=2
 set tags+=/usr/include/tags,./tags;/
+set cc=100
 
 set rtp+=~/.vim/bundle/Vundle.vim/
 
@@ -133,6 +134,8 @@ autocmd BufEnter * let &titlestring = hostname() . "[vim(" . expand("%:t") . ")]
 
 map <leader>r :%s/\<<C-r><C-w>\>/<C-r><C-w>/g 
 map <leader>R :'<,'>s/\<<C-r><C-w>\>/<C-r><C-w>/g 
+map <Leader>cc :setlocal errorformat=%f<CR>:cb<CR>
+
 map <Leader>] :Ag <cword><Return>
 
 map <Leader>h :bp<Return>
