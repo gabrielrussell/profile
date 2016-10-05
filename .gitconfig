@@ -57,3 +57,5 @@
 	s     = show --pretty=full
 	t     = status
         srb   = !git stash && git pull --rebase && git stash pop
+[http]
+	cookiefile = /home/gabriel/.gitcookies
