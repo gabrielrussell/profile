@@ -14,7 +14,7 @@
 [color]
 	ui = auto
 [pretty]
-        olcolor='%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>'
+        olcolor=%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>
 [alias]
 	a     = add -v
 	au    = add -v -u
@@ -43,6 +43,7 @@
 	lf    = log       --follow                               --pretty=olcolor
         lp    = log       -p                                     --format=medium
         lr    = log --reverse                                    --pretty=format:'pick %h %s'
+        rl    = reflog --pretty=olcolor
 	m     = merge -v
 	o     = checkout
         of    = checkout -f
