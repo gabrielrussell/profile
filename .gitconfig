@@ -1,8 +1,10 @@
-[url "git@github.com:"]
-        insteadOf = https://github.com/
 [user]
 	name = Gabriel Russell
 	email = gabriel.russell@mongodb.com
+[url "git@github.com:"]
+        insteadOf = https://github.com/
+[http]
+	cookiefile = /home/gabriel/.gitcookies
 [core]
         editor = vim
 [push]
@@ -58,5 +60,3 @@
 	s     = show --pretty=full
 	t     = status
         srb   = !git stash && git pull --rebase && git stash pop
-[http]
-	cookiefile = /home/gabriel/.gitcookies
