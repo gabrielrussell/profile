@@ -1,3 +1,5 @@
+set clipboard=unnamedplus
+
 set autoindent
 set autowrite
 set background=dark
@@ -35,6 +37,7 @@ filetype off
 call vundle#begin()
 
 Plugin 'fatih/vim-go'
+Plugin 'lyuts/vim-rtags'
 Plugin 'gmarik/vundle'
 Plugin 'majutsushi/tagbar'
 Plugin 'mhinz/vim-startify'
@@ -48,11 +51,6 @@ call vundle#end()
 
 filetype plugin indent off
 
-if has('xterm_clipboard')
-    set clipboard=unnamed,autoselect
-endif
-
-let g:go_fmt_command="gofmt"
 
 colorscheme molokai
 
@@ -64,6 +62,8 @@ autocmd BufWinLeave * if expand("%") != "" | mkview | endif
 filetype plugin indent on
 syntax on
 
+set completefunc=RtagsCompleteFunc
+
 set title
 
 autocmd BufEnter * let &titlestring = hostname() . "[vim(" . expand("%:t") . ")]"
@@ -73,6 +73,7 @@ map <leader>R :'<,'>s/\<<C-r><C-w>\>/<C-r><C-w>/g
 map <Leader>cc :setlocal errorformat=%f<CR>:cb<CR>
 
 map <Leader>] :Ag <cword><Return>
+let g:ag_prg="ag --vimgrep"
 
 map <Leader>h :bp<Return>
 map <Leader>l :bn<Return>
@@ -85,7 +86,6 @@ map tn :NERDTreeToggle<CR>
 let g:ctrlp_map = '<C-p>'
 let g:ctrlp_cmd = 'CtrlP'
 
-"nmap <CR> :GoRun<CR>
 source ~/.vim/createtoggle.vim
 
 call MapToggle("ts","SyntaxToggle","syntax off","syntax enable")
