@@ -36,7 +36,6 @@ filetype off
 
 call vundle#begin()
 
-Plugin 'fatih/vim-go'
 Plugin 'lyuts/vim-rtags'
 Plugin 'gmarik/vundle'
 Plugin 'majutsushi/tagbar'
